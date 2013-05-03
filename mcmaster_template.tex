@@ -1,0 +1,142 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[letterpaper,10pt]{report}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[letterpaper,top=1.5in,left=1.5in,bottom=1in,right=1in]{geometry}
+\usepackage{ragged2e} %provides better \right \left and \Centering
+\usepackage[tracking=true,kerning=true,expansion]{microtype} %makes type look 
+%better
+\usepackage{booktabs} %makes tables look better
+\usepackage{siunitx} %provides standard printing for SI units
+\usepackage[breaklinks,hidelinks]{hyperref} %Provides clickable links
+\usepackage{cleveref}
+\usepackage{cite} %Improves handling of numeric citations in \cite commands
+\usepackage{ifpdf}
+\usepackage[T1]{fontenc} %upgrades font encodings
+\usepackage{lmodern} %improved version of computer modern font
+\usepackage{multirow} %Allows for mulirow a.k.a. grouped cells in tables
+\usepackage{fixltx2e} %Fixings bugs in latex2e that aren't fixed due to breaking backwards compatability
+\usepackage{upgreek} %Provides upright (non italic) greek fonts
+\usepackage{gensymb} %Provides  \de­gree, \cel­sius, \pert­hou­sand, \mi­cro and \ohm
+\usepackage{textgreek} %Provides \textbeta and similar greek letters in text mode
+ 
+%\usepackage[section]{placeins} %Fixes placement of figures so they don't cross section boundaries
+\usepackage[section,subsection,subsubsection]{extraplaceins}
+
+
+\ifpdf
+	\usepackage[pdftex]{graphicx}
+	\pdfcompresslevel=9
+\else
+	\usepackage{graphicx}
+\fi
+
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{showlabels} %\usepackage[final]{showlabels}
+\usepackage{lineno}
+\usepackage{makeidx}
+\usepackage{lipsum} %Prints junk text with \lipsum
+\usepackage{setspace}
+\usepackage{todonotes}
+
+
+%\doublespacing
+%\linenumbers
+
+\hypersetup{
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Gabriel A. Devenyi},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+\title{Thesis Example}
+\author{Gabriel A. Devenyi}
+\date{\today}
+
+\makeindex
+
+\begin{document}
+
+\begin{titlepage} %Half-title
+	\vspace*{\fill}\Centering
+	Energy and Symmetry at Surfaces: Role in Nanostructures and Epitaxy
+	\vspace*{\fill}
+\end{titlepage}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{titlepage} %Titlepage
+\Centering
+\vspace*{\fill} %This makes text vertically centered
+{\Large ENERGY AND SYMMETRY AT SURFACES:\\ROLE IN NANOSTRUCTURES AND EPITAXY\\
+By\\GABRIEL A.\ DEVENYI, B.\ ENG.\\}
+\vfill 
+A Thesis Submitted to the School of Graduate Studies in Partial Fulfilment of 
+the Requirements for the Degree Doctor of Philosophy
+McMaster University
+\vfill%This pushes copyright to the bottom
+\textcopyright Copyright by Gabriel A.\ Devenyi, May 2013
+\end{titlepage}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\pagenumbering{roman}
+\setcounter{page}{2}
+{\Large Descriptive Note\\
+DOCTOR OF PHILOSOPHY (2013) McMaster University
+(Engineering Physics)
+Hamilton, Ontario
+TITLE: The Character and Administration of Governor John Wentworth\\
+AUTHOR: Gabriel A. Devenyi, B.\ Eng. (McMaster University)\\
+SUPERVISOR: Professor John S. Preston\\
+NUMBER OF PAGES: vii, 212}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	\begin{abstract}
+		\thispagestyle{plain}
+		\setcounter{page}{3}
+			Abstract goes here.
+	\end{abstract}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	\setcounter{page}{4}
+	\chapter*{Acknowledgements}
+	My wife, my dog, my parents, my supervisor.
+	\newpage
+
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\newpage
+	\pagenumbering{arabic} %Reset page numbering
+
+%Fix all the header/footer according to McMaster Requirements
+	\fancypagestyle{plain}{
+	\fancyhf{}
+	\lhead{PhD Thesis - Gabriel A.\ Devenyi}
+	\chead{}
+	\rhead{McMaster University - Engineering Physics}
+	\cfoot{\thepage}}
+	\pagestyle{fancy}
+	\fancyhead{}
+	\lhead{PhD Thesis - Gabriel A.\ Devenyi}
+	\chead{}
+	\rhead{McMaster University - Engineering Physics}
+	\cfoot{\thepage}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%Thesis starts here
+
+
+%\printindex
+\end{document}
