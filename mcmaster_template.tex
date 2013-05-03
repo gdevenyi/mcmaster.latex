@@ -1,18 +1,17 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 \documentclass[letterpaper,10pt]{report}
 \usepackage[english]{babel}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage[letterpaper,top=1.5in,left=1.5in,bottom=1in,right=1in]{geometry}
+\usepackage{amsmath} %AMS Math Package
+\usepackage{amssymb} %AMS Math Symbols
+\usepackage[letterpaper,top=1.5in,left=1.5in,bottom=1in,right=1in]{geometry} %Sets up basic page dimensions
 \usepackage{ragged2e} %provides better \right \left and \Centering
-\usepackage[tracking=true,kerning=true,expansion]{microtype} %makes type look 
-%better
+\usepackage[tracking=true,kerning=true,expansion]{microtype} %makes type look better
 \usepackage{booktabs} %makes tables look better
 \usepackage{siunitx} %provides standard printing for SI units
 \usepackage[breaklinks,hidelinks]{hyperref} %Provides clickable links
-\usepackage{cleveref}
+\usepackage{cleveref} %Allows use of \cref, which knows what kind of ref you're making, so you don't have to write EQN and such
 \usepackage{cite} %Improves handling of numeric citations in \cite commands
-\usepackage{ifpdf}
+\usepackage{ifpdf} %Conditions for if pdftex is running
 \usepackage[T1]{fontenc} %upgrades font encodings
 \usepackage{lmodern} %improved version of computer modern font
 \usepackage{multirow} %Allows for mulirow a.k.a. grouped cells in tables
@@ -20,9 +19,8 @@
 \usepackage{upgreek} %Provides upright (non italic) greek fonts
 \usepackage{gensymb} %Provides  \de­gree, \cel­sius, \pert­hou­sand, \mi­cro and \ohm
 \usepackage{textgreek} %Provides \textbeta and similar greek letters in text mode
- 
 %\usepackage[section]{placeins} %Fixes placement of figures so they don't cross section boundaries
-\usepackage[section,subsection,subsubsection]{extraplaceins}
+\usepackage[section,subsection,subsubsection]{extraplaceins} %Modified version of placeins which works at section, subsection and subsubsection
 
 
 \ifpdf
@@ -32,18 +30,18 @@
 	\usepackage{graphicx}
 \fi
 
-\usepackage{subcaption}
-\usepackage{fancyhdr}
-\usepackage{showlabels} %\usepackage[final]{showlabels}
-\usepackage{lineno}
-\usepackage{makeidx}
+\usepackage{subcaption} %The standard method to do figures with a), b) and such
+\usepackage{fancyhdr} %Package for changing header/footer
+\usepackage{showlabels} %Prints all instances of \label in margin for easy writing
+\usepackage{lineno} %Allows labeling of line numbers throughout document
+\usepackage{makeidx} %For generating index files
 \usepackage{lipsum} %Prints junk text with \lipsum
-\usepackage{setspace}
-\usepackage{todonotes}
+\usepackage{setspace} %Provides \doublespacing command
+\usepackage{todonotes} %Provides \todo{something} which puts labels in magin and \missingfigure{something} to put in placeholder figures
 
 
-%\doublespacing
-%\linenumbers
+%\doublespacing %Turns on double spacing
+%\linenumbers %Turns on line numbers
 
 \hypersetup{
     unicode=true,          % non-Latin characters in Acrobat’s bookmarks
@@ -73,7 +71,7 @@
 
 \begin{document}
 
-\begin{titlepage} %Half-title
+\begin{titlepage} %Half-title page for McMaster Formatting
 	\vspace*{\fill}\Centering
 	Energy and Symmetry at Surfaces: Role in Nanostructures and Epitaxy
 	\vspace*{\fill}
@@ -93,7 +91,7 @@ McMaster University
 \end{titlepage}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \pagenumbering{roman}
-\setcounter{page}{2}
+\setcounter{page}{2} %Descriptive note page
 {\Large Descriptive Note\\
 DOCTOR OF PHILOSOPHY (2013) McMaster University
 (Engineering Physics)
