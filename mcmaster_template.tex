@@ -21,6 +21,8 @@
 \usepackage{textgreek} %Provides \textbeta and similar greek letters in text mode
 %\usepackage[section]{placeins} %Fixes placement of figures so they don't cross section boundaries
 \usepackage[section,subsection,subsubsection]{extraplaceins} %Modified version of placeins which works at section, subsection and subsubsection
+\usepackage{verbatim}%Fixes bugs in \verbatim, and provides \begin{comment} and \verbatiminput for including files
+\usepackage{syntonly}%Provides syntax-only latex runs, useful for when the document starts getting big!
 
 
 \ifpdf
@@ -40,8 +42,9 @@
 \usepackage{todonotes} %Provides \todo{something} which puts labels in magin and \missingfigure{something} to put in placeholder figures
 
 
-%\doublespacing %Turns on double spacing
-%\linenumbers %Turns on line numbers
+%\doublespacing %Uncomment to turn on double spacing
+%\linenumbers %Uncomment to turn on line numbers
+%\syntaxonly %Uncomment to only check compile for syntax PRODUCES NO OUTPUT
 
 \hypersetup{
     unicode=true,          % non-Latin characters in Acrobat’s bookmarks
