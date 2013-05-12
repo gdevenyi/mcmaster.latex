@@ -10,7 +10,6 @@
 \usepackage{siunitx} %provides standard printing for SI units
 \usepackage[breaklinks,hidelinks]{hyperref} %Provides clickable links
 \usepackage{cleveref} %Allows use of \cref, which knows what kind of ref you're making, so you don't have to write EQN and such
-\usepackage{cite} %Improves handling of numeric citations in \cite commands (compresses coherent numbers in 7-9 etc)
 \usepackage{ifpdf} %Conditions for if pdftex is running
 \usepackage[T1]{fontenc} %upgrades font encodings
 \usepackage[utf8]{inputenc}%Tells latex the file is saved as UTF-8 (make sure it is!)
@@ -25,8 +24,9 @@
 \usepackage[section,subsection,subsubsection]{extraplaceins} %Modified version of placeins which works at section, subsection and subsubsection
 \usepackage{verbatim}%Fixes bugs in \verbatim, and provides \begin{comment} and \verbatiminput for including files
 \usepackage{syntonly}%Provides syntax-only latex runs, useful for when the document starts getting big!
- \usepackage{float} %Fixes up floats (figures) and provides the H placement modifier (place the float RIGHT HERE). with great power...
-
+\usepackage{float} %Fixes up floats (figures) and provides the H placement modifier (place the float RIGHT HERE). with great power...
+\usepackage[style=nature,backend=bibtex]{biblatex}
+%\addbibresource{library.bib}
 \ifpdf
 	\usepackage[pdftex]{graphicx}
 	\pdfcompresslevel=9
@@ -148,6 +148,6 @@ NUMBER OF PAGES: vii, 212}
 %Other useful examples
 %\textsubscript{} and \textsuperscript{} are the best way to do super/sub (provided by fixltx2e)
 
-
+%\printbibliography
 %\printindex
 \end{document}
