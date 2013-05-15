@@ -33,3 +33,5 @@
 *~
 *.fls
 *.pdf
+*.xml
+*blx.bib
