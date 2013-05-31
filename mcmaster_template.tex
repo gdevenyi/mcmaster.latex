@@ -32,13 +32,11 @@
 \usepackage[english]{isodate}%Convert any date formats to ISO style
 \usepackage{listing}%Package for listing sourcecode with syntax highlighting
 \usepackage{ellipsis}%Fix \ldots and similar commands, bugs with spacing and such
+\usepackage{graphicx}
 
-\ifpdf
-	\usepackage[pdftex]{graphicx}
-	\pdfcompresslevel=9
-\else
-	\usepackage{graphicx}
-\fi
+\pdfminorversion=5
+\pdfobjcompresslevel=3 
+\pdfcompresslevel=9
 
 \usepackage{subcaption} %The standard method to do figures with a), b) and such
 \usepackage{fancyhdr} %Package for changing header/footer
