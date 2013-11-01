@@ -27,8 +27,8 @@
 \usepackage{syntonly}%Provides syntax-only latex runs, useful for when the document starts getting big!
 \usepackage{csquotes}
 \usepackage{float} %Fixes up floats (figures) and provides the H placement modifier (place the float RIGHT HERE). with great power...
-\usepackage[style=numeric-comp,backend=bibtex]{biblatex}
-%\addbibresource{library.bib}
+\usepackage[style=numeric-comp,backend=biber,sorting=none,backref=true,maxnames=99,alldates=iso8601]{biblatex}
+%\addbibresource{library.bib} %This is how you add your bib files
 \usepackage[english]{isodate}%Convert any date formats to ISO style
 \usepackage{listing}%Package for listing sourcecode with syntax highlighting
 \usepackage{ellipsis}%Fix \ldots and similar commands, bugs with spacing and such
