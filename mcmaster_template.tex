@@ -1,10 +1,10 @@
 \RequirePackage[l2tabu, orthodox]{nag} %Package complains about uses of old functions, make sure you write modern latex
-\documentclass[letterpaper,10pt,twoside]{report}
+\documentclass[letterpaper,12pt,twoside,openright]{report}
 \usepackage[english,canadian]{babel}
 \usepackage{amsmath} %AMS Math Package
 \usepackage{amssymb} %AMS Math Symbols
 \usepackage[all,warning]{onlyamsmath}%Warn about non-ams math useage, suggest improvements
-\usepackage[letterpaper,top=3.8cm,bottom=2.5cm,inner=2.5cm,outer=3.8cm]{geometry} %Sets up basic page dimensions
+\usepackage[letterpaper,twoside,top=3.8cm,bottom=2.5cm,inner=2.5cm,outer=3.8cm]{geometry} %Sets up basic page dimensions
 \usepackage[newcommands]{ragged2e} %provides better \right \left and \Centering, replaces old commands with improved ones
 \usepackage[tracking=true,kerning=true,expansion]{microtype} %makes type look better
 \usepackage{booktabs} %makes tables look better
@@ -35,7 +35,7 @@
 \usepackage{graphicx}
 
 \pdfminorversion=5
-\pdfobjcompresslevel=3 
+\pdfobjcompresslevel=3
 \pdfcompresslevel=9
 
 \usepackage{subcaption} %The standard method to do figures with a), b) and such
@@ -82,9 +82,9 @@
 \begin{document}
 
 \begin{titlepage} %Half-title page for McMaster Formatting
-	\vspace*{\fill}\Centering
-	Energy and Symmetry at Surfaces: Role in Nanostructures and Epitaxy
-	\vspace*{\fill}
+    \vspace*{\fill}\Centering
+    Energy and Symmetry at Surfaces: Role in Nanostructures and Epitaxy
+    \vspace*{\fill}
 \end{titlepage}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{titlepage} %Titlepage
@@ -92,8 +92,8 @@
 \vspace*{\fill} %This makes text vertically centered
 {\Large ENERGY AND SYMMETRY AT SURFACES:\\ROLE IN NANOSTRUCTURES AND EPITAXY\\
 By\\GABRIEL A.\ DEVENYI, B.\ ENG.\\}
-\vfill 
-A Thesis Submitted to the School of Graduate Studies in Partial Fulfilment of 
+\vfill
+A Thesis Submitted to the School of Graduate Studies in Partial Fulfilment of
 the Requirements for the Degree Doctor of Philosophy
 McMaster University
 \vfill%This pushes copyright to the bottom
@@ -111,30 +111,30 @@ AUTHOR: Gabriel A. Devenyi, B.\ Eng. (McMaster University)\\
 SUPERVISOR: Professor John S. Preston\\
 NUMBER OF PAGES: vii, 212}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	\begin{abstract}
-		\thispagestyle{plain}
-		\setcounter{page}{3}
-			Abstract goes here.
-	\end{abstract}
+    \begin{abstract}
+        \thispagestyle{plain}
+        \setcounter{page}{3}
+            Abstract goes here.
+    \end{abstract}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	\setcounter{page}{4}
-	\chapter*{Acknowledgements}
-	My wife, my dog, my parents, my supervisor.
-	\newpage
+    \setcounter{page}{4}
+    \chapter*{Acknowledgements}
+    My wife, my dog, my parents, my supervisor.
+    \newpage
 
-	\tableofcontents
-	\listoffigures
-	\listoftables
-	\newpage
-	\pagenumbering{arabic} %Reset page numbering
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    \newpage
+    \pagenumbering{arabic} %Reset page numbering
 
 %Fix all the header/footer according to McMaster Requirements
-	\pagestyle{fancy}
-	\fancyhead{}
-	\fancyfoot{}
-	\fancyhead[RE,LO]{McMaster University -- Engineering Physics}
-	\fancyhead[LE,RO]{PhD Thesis -- Gabriel A. Devenyi}
-	\fancyfoot[CE,CO]{\thepage}
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \fancyhead[RE,LO]{McMaster University -- Engineering Physics}
+    \fancyhead[LE,RO]{PhD Thesis -- Gabriel A. Devenyi}
+    \fancyfoot[CE,CO]{\thepage}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 %Thesis starts here
