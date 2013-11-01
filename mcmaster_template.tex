@@ -28,12 +28,14 @@
 \usepackage{csquotes}
 \usepackage{float} %Fixes up floats (figures) and provides the H placement modifier (place the float RIGHT HERE). with great power...
 \usepackage[style=numeric-comp,backend=biber,sorting=none,backref=true,maxnames=99,alldates=iso8601]{biblatex}
-%\addbibresource{library.bib} %This is how you add your bib files
+\addbibresource{library.bib} %This is how you add your bib files
 \usepackage[english]{isodate}%Convert any date formats to ISO style
 \usepackage{listing}%Package for listing sourcecode with syntax highlighting
 \usepackage{ellipsis}%Fix \ldots and similar commands, bugs with spacing and such
 \usepackage{graphicx}
 \setkeys{Gin}{width=0.75\textwidth} %Sets default width of \includegraphics{}
+\usepackage{lastpage} %Used to count the number of pages for the descriptive note
+\usepackage{nomencl} %Used to generate the Abbreviations page
 
 \pdfminorversion=5
 \pdfobjcompresslevel=3
@@ -41,7 +43,6 @@
 
 \usepackage{subcaption} %The standard method to do figures with a), b) and such
 \usepackage{fancyhdr} %Package for changing header/footer
-\usepackage{showkeys} %Prints all instances of \label in margin for easy writing
 \usepackage{lineno} %Allows labeling of line numbers throughout document
 \usepackage{makeidx} %For generating index files
 \usepackage{lipsum} %Prints junk text with \lipsum
@@ -51,82 +52,95 @@
 \widowpenalty=300 %Prevent widows (single sentences at end of page)
 \clubpenalty=300 %Prevent orphans (single sentences on empty pages)
 %\doublespacing %Uncomment to turn on double spacing
+\onehalfspacing %Double spacing is crazy large, don't do it.
 %\linenumbers %Uncomment to turn on line numbers
 %\syntaxonly %Uncomment to only check compile for syntax PRODUCES NO OUTPUT
 
 \hypersetup{
-    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=false,     % window fit to page when opened
-    pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={My title},    % title
-    pdfauthor={Gabriel A. Devenyi},     % author
-    pdfsubject={Subject},   % subject of the document
-    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
-    pdfnewwindow=true,      % links in new window
-    colorlinks=false,       % false: boxed links; true: colored links
-    linkcolor=red,          % color of internal links
-    citecolor=green,        % color of links to bibliography
-    filecolor=magenta,      % color of file links
-    urlcolor=cyan           % color of external links
+    unicode=true,
+    pdftoolbar=true,
+    pdfmenubar=true,
+    pdffitwindow=false,
+    pdfstartview={FitV},
+    pdftitle={Thesis Example},
+    pdfauthor={Gabriel A. Devenyi},
+    pdfsubject={Subject},
+    pdfkeywords={keyword1} {key2} {key3},
+    pdfnewwindow=true,
+    colorlinks=false,
+    linkcolor=red,
+    citecolor=green,
+    filecolor=magenta,
+    urlcolor=cyan
 }
 %\graphicspath{{graphics/}} %Uncomment if you want to hide all figure files in a graphics/ subdirectory
-
 
 \title{Thesis Example}
 \author{Gabriel A. Devenyi}
 \date{\today}
 
 \makeindex
+\renewcommand{\nomname}{List of Abbreviations and Symbols}
+\renewcommand{\nomlabel}[1]{\textbf{#1}}
+\makenomenclature
 
 \begin{document}
 
-\begin{titlepage} %Half-title page for McMaster Formatting
-    \vspace*{\fill}\Centering
-    Energy and Symmetry at Surfaces: Role in Nanostructures and Epitaxy
+\begin{titlepage} %Half-title page for McMaster Formatting, Max 60 Characters
+    \thispagestyle{empty}
+    \topskip0pt
     \vspace*{\fill}
+    \begin{center}{\Large
+    \uppercase{Thesis Example}}
+    \end{center}
+    \vspace*{\fill}
+    \setcounter{page}{0}
 \end{titlepage}
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{titlepage} %Titlepage
-\Centering
+\thispagestyle{empty}
+\pagenumbering{roman}
+\centering
 \vspace*{\fill} %This makes text vertically centered
-{\Large ENERGY AND SYMMETRY AT SURFACES:\\ROLE IN NANOSTRUCTURES AND EPITAXY\\
-By\\GABRIEL A.\ DEVENYI, B.\ ENG.\\}
+{\Large \uppercase{Thesis Example}\\
+\vfill
+By GABRIEL A.\ DEVENYI, B.\ ENG.\\}
 \vfill
 A Thesis Submitted to the School of Graduate Studies in Partial Fulfilment of
 the Requirements for the Degree Doctor of Philosophy
-McMaster University
 \vfill%This pushes copyright to the bottom
-\textcopyright Copyright by Gabriel A.\ Devenyi, May 2013
+McMaster University \textcopyright{} Copyright by Gabriel A.\ Devenyi, November 2013
 \end{titlepage}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\pagenumbering{roman}
-\setcounter{page}{2} %Descriptive note page
-{\Large Descriptive Note\\
-DOCTOR OF PHILOSOPHY (2013) McMaster University
-(Engineering Physics)
-Hamilton, Ontario
-TITLE: The Character and Administration of Governor John Wentworth\\
-AUTHOR: Gabriel A. Devenyi, B.\ Eng. (McMaster University)\\
+{\noindent McMaster University DOCTOR OF PHILOSOPHY (2013) Hamilton, Ontario (Engineering Physics)\\
+TITLE: Thesis Example\\
+AUTHOR: Gabriel A. Devenyi, B.Eng. (McMaster University)\\
 SUPERVISOR: Professor John S. Preston\\
-NUMBER OF PAGES: vii, 212}
+NUMBER OF PAGES: ix,~\pageref{LastPage}}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
     \begin{abstract}
         \thispagestyle{plain}
         \setcounter{page}{3}
-            Abstract goes here.
+            This is where the abstract proper goes
     \end{abstract}
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-    \setcounter{page}{4}
-    \chapter*{Acknowledgements}
-    My wife, my dog, my parents, my supervisor.
-    \newpage
 
+    \renewcommand{\abstractname}{Acknowledgements}
+    \begin{abstract} \setcounter{page}{4} \thispagestyle{plain}
+        Here, we abuse the abstract command to create an acknowledgements
+    \end{abstract}
+    
+    \setcounter{secnumdepth}{3} %Make TOC include subsubsections
     \tableofcontents
-    \listoffigures
-    \listoftables
-    \newpage
+    {\listoffigures \let\cleardoublepage\clearpage
+    \printnomenclature}
+
+    \renewcommand{\abstractname}{Declaration of Academic Achievement}
+    \begin{abstract} \thispagestyle{plain} \setcounter{page}{9} %This page number needs to be manually set properly after the tableofcontents is generated
+        Here, we abuse the abstract command to create the declaration of academic achievement
+    \end{abstract}
+    
+    \listoftodos %Uncomment this to generate a list of todos (useful for keeping track of things)
     \pagenumbering{arabic} %Reset page numbering
 
 %Fix all the header/footer according to McMaster Requirements
@@ -142,15 +156,19 @@ NUMBER OF PAGES: vii, 212}
 
 %For large LaTeX documents, it is best practice to separate the material into smaller files so that it is easier to handle, use \include to insert each file into the overall document
 
-%\chapter{Chapter 1}
+\chapter{Chapter 1}
 %\include{chapter1}
+This chapter is about \cite{example}.
+\todo{Write a chapter here}
 
-%\chapter{Chapter 2}
+\chapter{Chapter 2}
 %\include{chapter2}
 
-%\printbibliography
+\nomenclature{EXPL}{Example Definition of Abbreviation}%
+
+\printbibliography
 %\printindex
 
-%\appendix
-%\chapter{Appendix A}
+\appendix
+\chapter{Appendix A}
 \end{document}
