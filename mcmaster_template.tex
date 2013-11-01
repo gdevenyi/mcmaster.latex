@@ -55,6 +55,7 @@
 \onehalfspacing %Double spacing is crazy large, don't do it.
 %\linenumbers %Uncomment to turn on line numbers
 %\syntaxonly %Uncomment to only check compile for syntax PRODUCES NO OUTPUT
+\setlength{\headheight}{15pt} %Fixes header height
 
 \hypersetup{
     unicode=true,
@@ -94,7 +95,7 @@
     \uppercase{Thesis Example}}
     \end{center}
     \vspace*{\fill}
-    \setcounter{page}{0}
+    \setcounter{page}{0} %This page needs to be "unnumbered" so we give it number zero
 \end{titlepage}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -131,8 +132,8 @@ NUMBER OF PAGES: ix,~\pageref{LastPage}}
     \end{abstract}
     
     \setcounter{secnumdepth}{3} %Make TOC include subsubsections
-    \tableofcontents
-    {\listoffigures \let\cleardoublepage\clearpage
+    \tableofcontents %Prints table of contents
+    {\listoffigures \let\cleardoublepage\clearpage %This fixes up an extra blank page
     \printnomenclature}
 
     \renewcommand{\abstractname}{Declaration of Academic Achievement}
