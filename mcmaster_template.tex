@@ -1,5 +1,5 @@
 \RequirePackage[l2tabu, orthodox]{nag} %Package complains about uses of old functions, make sure you write modern latex
-\documentclass[letterpaper,12pt,twoside,openright]{report}
+\documentclass[letterpaper,12pt,twoside,openright]{report} %twoside an openright make the doucment look like a "real textbook" style formatting
 \usepackage[english,canadian]{babel}
 \usepackage{amsmath} %AMS Math Package
 \usepackage{amssymb} %AMS Math Symbols
@@ -27,18 +27,18 @@
 \usepackage{syntonly}%Provides syntax-only latex runs, useful for when the document starts getting big!
 \usepackage{csquotes}
 \usepackage{float} %Fixes up floats (figures) and provides the H placement modifier (place the float RIGHT HERE). with great power...
-\usepackage[style=numeric-comp,backend=biber,sorting=none,backref=true,maxnames=99,alldates=iso8601]{biblatex}
+\usepackage[style=numeric-comp,backend=biber,sorting=none,backref=true,maxnames=99,alldates=iso8601]{biblatex} %Sets up the referencing system, standard numeric ordering, prints the page numbers refereced as a back reference, prints all names, makes dates iso dates
 \addbibresource{library.bib} %This is how you add your bib files
 \usepackage[english]{isodate}%Convert any date formats to ISO style
 \usepackage{listing}%Package for listing sourcecode with syntax highlighting
 \usepackage{ellipsis}%Fix \ldots and similar commands, bugs with spacing and such
-\usepackage{graphicx}
+\usepackage{graphicx} %Standard graphics spackage
 \setkeys{Gin}{width=0.75\textwidth} %Sets default width of \includegraphics{}
 \usepackage{lastpage} %Used to count the number of pages for the descriptive note
 \usepackage{nomencl} %Used to generate the Abbreviations page
-\usepackage[raggedright]{titlesec}
+\usepackage[raggedright]{titlesec} %This fixes hypenation in long chapter/section titles
 
-\pdfminorversion=5
+\pdfminorversion=5 %This sets the PDF versions allowing better compression
 \pdfobjcompresslevel=3
 \pdfcompresslevel=9
 
@@ -81,6 +81,7 @@
 \author{Gabriel A. Devenyi}
 \date{\today}
 
+%This stuff is used to generate a nomenclature section
 \makeindex
 \renewcommand{\nomname}{List of Abbreviations and Symbols}
 \renewcommand{\nomlabel}[1]{\textbf{#1}}
@@ -124,22 +125,22 @@ NUMBER OF PAGES: ix,~\pageref{LastPage}}
     \begin{abstract}
         \thispagestyle{plain}
         \setcounter{page}{3}
-            This is where the abstract proper goes
+            This is where the abstract proper goes. The page number of this page may need be abused to number correctly.
     \end{abstract}
 
     \renewcommand{\abstractname}{Acknowledgements}
     \begin{abstract} \setcounter{page}{4} \thispagestyle{plain}
-        Here, we abuse the abstract command to create an acknowledgements
+        Here, we abuse the abstract command to create an acknowledgements. The page number of this page may need be abused to number correctly.
     \end{abstract}
     
     \setcounter{secnumdepth}{3} %Make TOC include subsubsections
     \tableofcontents %Prints table of contents
     {\listoffigures \let\cleardoublepage\clearpage %This fixes up an extra blank page
-    \printnomenclature}
+    \printnomenclature} %Print glossary/nomenclature/abbreviations
 
     \renewcommand{\abstractname}{Declaration of Academic Achievement}
     \begin{abstract} \thispagestyle{plain} \setcounter{page}{9} %This page number needs to be manually set properly after the tableofcontents is generated
-        Here, we abuse the abstract command to create the declaration of academic achievement
+        Here, we abuse the abstract command to create the declaration of academic achievement. The page number of this page will need be abused to number correctly.
     \end{abstract}
     
     \listoftodos %Uncomment this to generate a list of todos (useful for keeping track of things)
